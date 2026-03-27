@@ -1,0 +1,5 @@
+dlt
+pandas
+pyarrow
+python-dotenv
+tzdata

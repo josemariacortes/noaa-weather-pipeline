@@ -1,0 +1,15 @@
+# Entorno virtual
+.venv/
+__pycache__/
+*.pyc
+
+# Data Lake (archivos grandes)
+bronze/
+
+# Archivos temporales de dlt
+.dlt/
+
+# Otros
+*.log
+.DS_Store
+Thumbs.db
