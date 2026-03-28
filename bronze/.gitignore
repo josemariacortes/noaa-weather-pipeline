@@ -6,6 +6,9 @@ __pycache__/
 # Data Lake (archivos grandes)
 bronze/
 
+# Excluimos todo el contenido de nonoa_gncn
+bronze/noaa_ghcn/**
+
 # Archivos temporales de dlt
 .dlt/
 

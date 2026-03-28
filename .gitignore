@@ -1,0 +1,3 @@
+bronze/noaa_ghcn/**
+# Excluimos todo el contenido de nonoa_gncn
+ingest/data/2026_.csv
