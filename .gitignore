@@ -4,3 +4,4 @@ ingest/data/2026_.csv
 dbt/logs/**
 dbt/target/**
 dbt/dbt_packages/**
+noaa_weather.duckdb
