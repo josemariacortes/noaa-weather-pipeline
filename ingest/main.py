@@ -57,7 +57,7 @@ def main():
         local_file_path = os.path.abspath(f'data\\{year}.csv').replace('\\', '/')
         load_info = pipeline.run(
         #    load_noaa_csv_file(local_path),
-            noaa_weather_resource(year, test_mode=test_mode, local_file=local_file_path),
+            noaa_weather_resource(year, test_mode=test_mode),
             table_name='noaa_daily_weather'
         )
         

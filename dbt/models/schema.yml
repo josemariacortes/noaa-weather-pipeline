@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: silver_noaa_clean
+    description: "Capa Silver: datos limpios y pivotados (formato ancho)"
+    columns:
+      - name: station_id
+        tests:
+          - not_null
+      - name: tmax_c
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: -5000
+              max_value: 8000
+      - name: prcp_mm
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1000
+
+  - name: gold_fact_observations
+    description: "Tabla de hechos - Observaciones diarias (modelo estrella)"
+    columns:
+      - name: station_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('gold_dim_station')
+              field: station_id
+      - name: date
+        tests:
+          - not_null
+          - relationships:
+              to: ref('gold_dim_date')
+              field: date
+
+  - name: gold_dim_station
+    description: "Dimensión de estaciones"
+    columns:
+      - name: station_id
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_dim_date
+    description: "Dimensión de tiempo"
+    columns:
+      - name: date
+        tests:
+          - unique
+          - not_null

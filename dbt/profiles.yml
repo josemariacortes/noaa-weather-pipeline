@@ -1,0 +1,7 @@
+noaa_duckdb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../noaa_weather.duckdb"
+      extensions: [httpfs, parquet]
