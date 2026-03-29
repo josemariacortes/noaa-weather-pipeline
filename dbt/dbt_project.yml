@@ -1,8 +1,8 @@
-name: 'noaa_weather_dbt'
-version: '1.0.0'
+name: "noaa_weather_dbt"
+version: "1.0.0"
 config-version: 2
 
-profile: 'noaa_duckdb'
+profile: "noaa_duckdb"
 
 model-paths: ["models"]
 test-paths: ["tests"]
@@ -12,6 +12,9 @@ seed-paths: ["seeds"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
 
+vars:
+  reference_path: "../data/reference"
+
 models:
   noaa_weather_dbt:
     bronze:
@@ -20,4 +23,4 @@ models:
       +materialized: table
     gold:
       +materialized: incremental
-      +unique_key: ['station_id', 'date', 'element']
+      +unique_key: ["station_id", "date", "element"]

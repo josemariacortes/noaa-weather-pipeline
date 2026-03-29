@@ -1,17 +1,17 @@
-{{ config(
-    materialized='table',
-    schema='gold'
-) }}
+{{ config(materialized='table', schema='gold') }}
 
-select 
-    column0 as state_code,
-    trim(column1) as state_name
-from read_csv(
-    '{{ var("reference_path") }}/ghcnd_states.txt',
-    delim = ' +',
-    header = false,
-    columns = {
-        'column0': 'string',
-        'column1': 'string'
-    }
+with source as (
+    select line
+    from read_csv(
+        '{{ var("reference_path") }}/ghcnd_states.txt',
+        delim = '\n',
+        columns = {'line': 'string'},
+        header = false
+    )
 )
+-- CODE          1-2    Character
+-- NAME         4-50    Character
+select 
+    substr(line, 1, 2) as state_code,
+    trim(substr(line, 4)) as state_name
+from source

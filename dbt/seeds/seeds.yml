@@ -1,0 +1,18 @@
+version: 2
+
+seeds:
+  - name: ghcnd_countries
+    config:
+      schema: gold
+
+  - name: ghcnd_stations
+    config:
+      schema: gold
+
+  - name: ghcnd_inventory
+    config:
+      schema: gold
+
+  - name: ghcnd_states
+    config:
+      schema: gold
