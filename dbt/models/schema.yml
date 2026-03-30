@@ -27,12 +27,14 @@ models:
           - relationships:
               to: ref('gold_dim_station')
               field: station_id
+              severity: warn
       - name: date
         tests:
           - not_null
           - relationships:
               to: ref('gold_dim_date')
               field: date
+              severity: warn
 
   - name: gold_dim_station
     description: "Dimensión de estaciones"

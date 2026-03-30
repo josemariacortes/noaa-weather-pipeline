@@ -6,11 +6,10 @@
   "configurations": [
     {
       "name": "Ejecutar NOAA Pipeline",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/ingest/main.py",
       "cwd": "${workspaceFolder}/ingest",
-      "args": ["2026", "--test"],
       "console": "integratedTerminal"
     }
   ]

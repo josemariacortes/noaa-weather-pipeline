@@ -30,9 +30,9 @@ os.chdir('dbt')
 
 cmd_dbt = [
     'dbt', 'build',
-    '--select', 
-    'gold_ref_countries gold_ref_stations gold_ref_inventory gold_ref_states '
-    'gold_dim_country gold_dim_station_enriched silver_noaa_clean gold_fact_observations',
+    # '--select', 
+    # 'gold_ref_countries gold_ref_stations gold_ref_inventory gold_ref_states '
+    # 'gold_dim_country gold_dim_station_enriched silver_noaa_clean gold_fact_observations',
     '--full-refresh' if TEST_MODE else '',
     '--vars', f'{{"year": {ANIO}}}'
 ]
