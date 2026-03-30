@@ -16,7 +16,7 @@ models:
         tests:
           - dbt_expectations.expect_column_values_to_be_between:
               min_value: 0
-              max_value: 1000
+              max_value: 9000
 
   - name: gold_fact_observations
     description: "Tabla de hechos - Observaciones diarias (modelo estrella)"

@@ -3,4 +3,6 @@ pandas
 pyarrow
 python-dotenv
 tzdata
-requirements.txt
+streamlit
+plotly
+duckdb

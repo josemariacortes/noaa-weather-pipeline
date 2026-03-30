@@ -1,5 +1,7 @@
 {{ config(materialized='table', schema='bronze') }}
 
+-- {% set year = var('year', 2026) %}   -- valor por defecto 2026
+
 select 
     station_id,
     date,
